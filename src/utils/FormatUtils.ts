@@ -205,7 +205,7 @@ export function chooseFormat(options: FormatOptions, streaming_data?: IStreaming
     candidates.sort((a, b) => b.bitrate - a.bitrate);
   }
 
-  return candidates[0];
+  return candidates.filter(v => v.content_length)[0];
 }
 
 export { toDash } from './DashManifest.js';
